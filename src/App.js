@@ -1,8 +1,11 @@
 import './App.css';
+import LoginPage from './Components/LoginPage'
 
 function App() {
   return (
-     <p>Hello New App</p>
+    <div id='MainContainer'>
+      <LoginPage />
+    </div>
   );
 }
 
