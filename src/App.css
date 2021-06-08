@@ -20,6 +20,12 @@ body {
   background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
   font-family: 'Lobster', cursive;
 }
+#LoginPageForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #Title {
   font-size:80px;
   margin-left: 20px;
@@ -29,10 +35,26 @@ body {
   font-size: 20px;
   margin-left: 20px;
 }
+#LoginPageButton{
+width: 100px;
+margin: 10px;
+background-color: rgb(138, 138, 138);
+border-radius: 3px;
+font-family: 'Lobster', cursive;
+}
 .LoginInputs {
 margin: 10px;
 width: 200px;
 height: 20px;
 border: 2px solid black;
 border-radius: 3px;
+}
+#LoginPageLowerTextContainer {
+  position: relative;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
 }
