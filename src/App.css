@@ -56,5 +56,27 @@ border-radius: 3px;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
 
+#SigUpContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
+  font-family: 'Lobster', cursive;
+}
+
+#SigUpContainer p {
+ font-size: 40px;
+}
+
+#SignUpPageForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
