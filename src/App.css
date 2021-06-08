@@ -72,6 +72,7 @@ border-radius: 3px;
 
 #SigUpContainer p {
  font-size: 40px;
+ text-shadow: 5px 5px 5px rgb(243, 243, 32);
 }
 
 #SignUpPageForm {
@@ -79,4 +80,8 @@ border-radius: 3px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.link {
+color: rgb(100, 196, 21);
 }
