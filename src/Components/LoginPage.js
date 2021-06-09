@@ -1,7 +1,11 @@
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
-const LoginPage = ({login, password, getCredentials, updateLogin, updatePassword}) => {
+const LoginPage = ({login, password, getCredentials, updateLogin, updatePassword, setLocation}) => {
 
+    useEffect(() => {
+ setLocation(window.location.href)
+    }, [])
 
     return (
         <div id='LoginPageMainContainer'>

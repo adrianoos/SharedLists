@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
-const SignUp = ({login, password, getCredentials, updateLogin, updatePassword}) => {
+const SignUp = ({login, password, getCredentials, updateLogin, updatePassword, setLocation}) => {
+
+    useEffect(() => {
+        setLocation(window.location.href)
+           }, [])
+
     return (
         <div id='SigUpContainer'>
          <p>Please Sign Up</p>
