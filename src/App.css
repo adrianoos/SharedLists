@@ -1,87 +1,122 @@
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 #MainContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
 }
 #LoginPageMainContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
-  font-family: 'Lobster', cursive;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
+	font-family: "Lobster", cursive;
 }
 #LoginPageForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 #Title {
-  font-size:80px;
-  margin-left: 20px;
-  text-shadow: 5px 5px 5px rgb(243, 243, 32);
+	font-size: 80px;
+	margin-left: 20px;
+	text-shadow: 5px 5px 5px rgb(243, 243, 32);
 }
 #SubTitle {
-  font-size: 20px;
-  margin-left: 20px;
+	font-size: 20px;
+	margin-left: 20px;
 }
-#LoginPageButton{
-width: 100px;
-margin: 10px;
-background-color: rgb(138, 138, 138);
-border-radius: 3px;
-font-family: 'Lobster', cursive;
+#LoginPageButton {
+	width: 100px;
+	margin: 10px;
+	background-color: rgb(138, 138, 138);
+	border-radius: 3px;
+	font-family: "Lobster", cursive;
 }
 .LoginInputs {
-margin: 10px;
-width: 200px;
-height: 20px;
-border: 2px solid black;
-border-radius: 3px;
+	margin: 10px;
+	width: 200px;
+	height: 20px;
+	border: 2px solid black;
+	border-radius: 3px;
 }
 #LoginPageLowerTextContainer {
-  position: relative;
-  width: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+	position: relative;
+	width: 200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
 
 #SigUpContainer {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
-  font-family: 'Lobster', cursive;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
+	font-family: "Lobster", cursive;
 }
 
 #SigUpContainer p {
- font-size: 40px;
- text-shadow: 5px 5px 5px rgb(243, 243, 32);
+	font-size: 40px;
+	text-shadow: 5px 5px 5px rgb(243, 243, 32);
 }
 
 #SignUpPageForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .link {
-color: rgb(100, 196, 21);
+	color: rgb(100, 196, 21);
+}
+
+#ListWrapperContainer {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-image: linear-gradient(rgb(172, 255, 40), rgb(59, 59, 56));
+	font-family: "Lobster", cursive;
+}
+
+#ListWrapperHeader {
+	position: inherit;
+	width: 95vw;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px black solid;
+}
+
+#ListWrapperHeader p {
+	color: rgb(29, 63, 63);
+	margin: 0 50px;
+	font-size: 25px;
+}
+
+#ListWrapperHeader button {
+	width: 100px;
+	margin: 10px;
+	background-color: rgb(138, 138, 138);
+	border-radius: 3px;
+	font-family: "Lobster", cursive;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect }from 'react'
 import './App.css';
 import LoginPage from './Components/LoginPage'
 import SignUp from './Components/SignUp'
+import ListsWrapper from './Components/ListsWrapper'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import dataBase from './config'
 
@@ -41,19 +42,23 @@ const signUp = () => {
       });
 
 if (existingLogins.filter(item => item.user === credentials.user).length > 0 && !location.includes('SignUp') && existingLogins.filter(item => item.password === credentials.password).length > 0) {
-  setLoggedUser(credentials.user) // ZALOGOWANIE OK
+  setLoggedUser(credentials.user) // Login in
 } else if (existingLogins.filter(item => item.user === credentials.user).length > 0 && !location.includes('SignUp') && existingLogins.filter(item => item.password === credentials.password).length === 0) {
-  console.log('złe hasło') // ZŁE HASŁO OK
+  console.log('złe hasło') // Wrong Password
 } else if (existingLogins.filter(item => item.user === credentials.user).length > 0 && location.includes('SignUp')) {
-  console.log('user istnieje')// USER ZAJĘTY OK niezależnie od hasła
+  console.log('user istnieje')// User name already taken
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length > 0) {
-  console.log('konto założone')
+  console.log('konto założone') // New Account Created
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length <= 0) {
-  console.log('za krótkie hasło')
+  console.log('za krótkie hasło') // Password to short
 }
 };
 
+console.log(loggedUser)
+
   return (
+    <>
+    { !loggedUser ?
     <Router>
       <div id='MainContainer'>
         <Route exact path='/'>
@@ -78,6 +83,13 @@ if (existingLogins.filter(item => item.user === credentials.user).length > 0 && 
         </Route>
       </div>
     </Router>
+    :
+    <ListsWrapper
+     loggedUser={loggedUser}
+     setLoggedUser={setLoggedUser}
+     />}
+    </>
+
   );
 }
 
