@@ -14,6 +14,8 @@ function App() {
   const [ existingLogins, setExistingLogins ] = useState([])
   const [ loggedUser, setLoggedUser ] = useState(false)
   const [ location, setLocation ] = useState('')
+  const [ showPopUp, setShowPopUP ] = useState(false)
+  const [ popUpMessage, setPopUpMessage ] = useState('')
 
   const updateLogin = (e) => {
     setLogin(e.target.value)
@@ -42,19 +44,25 @@ const signUp = () => {
       });
 
 if (existingLogins.filter(item => item.user === credentials.user).length > 0 && !location.includes('SignUp') && existingLogins.filter(item => item.password === credentials.password).length > 0) {
-  setLoggedUser(credentials.user) // Login in
+  setLoggedUser(credentials.user)
+  setShowPopUP(true)
+  setTimeout(() => {setShowPopUP(false)}, 2500)
+  setPopUpMessage('Logged In')
 } else if (existingLogins.filter(item => item.user === credentials.user).length > 0 && !location.includes('SignUp') && existingLogins.filter(item => item.password === credentials.password).length === 0) {
-  console.log('złe hasło') // Wrong Password
+  setShowPopUP(true)
+  setTimeout(() => {setShowPopUP(false)}, 2500)
+  setPopUpMessage('Wrong Password')
 } else if (existingLogins.filter(item => item.user === credentials.user).length > 0 && location.includes('SignUp')) {
-  console.log('user istnieje')// User name already taken
+  setShowPopUP(true)
+  setTimeout(() => {setShowPopUP(false)}, 2500)
+  setPopUpMessage('UserName already taken')
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length > 0) {
   console.log('konto założone') // New Account Created
+  // dodaj działające metody dla założenia konta, zalogowania, komunikatu o utworzeniu konta i zalogowaniu
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length <= 0) {
   console.log('za krótkie hasło') // Password to short
 }
 };
-
-console.log(loggedUser)
 
   return (
     <>
@@ -88,6 +96,12 @@ console.log(loggedUser)
      loggedUser={loggedUser}
      setLoggedUser={setLoggedUser}
      />}
+     { showPopUp ?
+         <div id='PopUpModal'>
+           <h1>{popUpMessage}</h1>
+         </div>:
+         ''
+    }
     </>
 
   );
