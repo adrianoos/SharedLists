@@ -57,10 +57,15 @@ if (existingLogins.filter(item => item.user === credentials.user).length > 0 && 
   setTimeout(() => {setShowPopUP(false)}, 2500)
   setPopUpMessage('UserName already taken')
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length > 0) {
-  console.log('konto założone') // New Account Created
-  // dodaj działające metody dla założenia konta, zalogowania, komunikatu o utworzeniu konta i zalogowaniu
+  dataBase.ref("/credentials").push(credentials)
+  setLoggedUser(credentials.user)
+  setShowPopUP(true)
+  setTimeout(() => {setShowPopUP(false)}, 2500)
+  setPopUpMessage('Account created')
 } else if (existingLogins.filter(item => item.user === credentials.user).length === 0 && location.includes('SignUp') && credentials.password.length <= 0) {
-  console.log('za krótkie hasło') // Password to short
+  setShowPopUP(true)
+  setTimeout(() => {setShowPopUP(false)}, 2500)
+  setPopUpMessage('Password To short')
 }
 };
 
