@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ListItem from './ListItem';
 
 
 const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
@@ -13,6 +14,10 @@ const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
               <p>Hello {loggedUser}</p>
               <p>Your's Shared Lists</p>
               <button onClick={() => logOut()}>Logout</button>
+            </div>
+            <div id='ListWrapperBody'>
+              <h1>wrapper body</h1>
+              <ListItem />
             </div>
         </div>
     )

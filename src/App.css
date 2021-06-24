@@ -137,4 +137,55 @@ body {
 	border: 2px solid rgb(2, 2, 2);
 	box-shadow: 1px 10px 100px rgb(2, 2, 2);
 	font-family: "Lobster", cursive;
+	animation: fadein 1s ease-in;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#ListWrapperBody {
+	height: 90%;
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	border: 1px solid black;
+}
+
+#ListItem {
+	position: relative;
+	width: 80%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: brown;
+	border-radius: 20px;
+	border: 2px solid black;
+}
+
+#ListItemHeader {
+	flex-basis: 10%;
+	width: 100%;
+	background-color: rgb(120, 139, 82);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#ListItemBody {
+	position: relative;
+	width: 100%;
+	background-color: rgb(226, 226, 226);
+	flex-basis: 90%;
+	overflow: hidden;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }

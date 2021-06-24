@@ -5,6 +5,7 @@ import SignUp from './Components/SignUp'
 import ListsWrapper from './Components/ListsWrapper'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import dataBase from './config'
+import { bounce } from 'react-animations'
 
 function App() {
 
