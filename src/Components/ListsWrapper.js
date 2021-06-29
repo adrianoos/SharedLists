@@ -1,5 +1,6 @@
 import React from 'react';
 import ListItem from './ListItem';
+import ListsManager from './ListsManager';
 
 
 const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
@@ -16,7 +17,7 @@ const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
               <button onClick={() => logOut()}>Logout</button>
             </div>
             <div id='ListWrapperBody'>
-              <h1>wrapper body</h1>
+              <ListsManager />
               <ListItem />
             </div>
         </div>
