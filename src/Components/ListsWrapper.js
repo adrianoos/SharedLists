@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ListItem from './ListItem';
 import ListsManager from './ListsManager';
 
 
 const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
 
+  const [ selectedList, setSelectedList ] = useState('')
+
     const logOut = () => {
         setLoggedUser('')
     }
+
+    const lists = [{title: 'ShoppingList'}, {title: 'Todos'}, {title: 'reminders'}]
 
     return (
         <div id='ListWrapperContainer'>
@@ -17,11 +21,11 @@ const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
               <button onClick={() => logOut()}>Logout</button>
             </div>
             <div id='ListWrapperBody'>
-              <ListsManager />
-              <ListItem />
+              <ListsManager lists={lists} selectedList={selectedList} setSelectedList={setSelectedList}/>
+              {selectedList ? <ListItem selectedList={selectedList}/> : ''}
             </div>
         </div>
     )
-}
+};
 
 export default ListsWrapper

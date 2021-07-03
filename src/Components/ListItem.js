@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ListItem = () => {
+const ListItem = ({selectedList}) => {
     return (
         <div id='ListItem'>
           <div id='ListItemHeader'>
-              <h1>Header</h1>
+              <h1>{selectedList}</h1>
           </div>
           <div id='ListItemBody'>
               <h2>ListItem Body</h2>

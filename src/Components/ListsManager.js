@@ -1,9 +1,16 @@
 import React from 'react'
 
-const ListsManager = () => {
+const ListsManager = ({lists, setSelectedList}) => {
+
     return (
         <div id='ListsManager'>
-            <p>Lists Manager</p>
+                <select onChange={(e) => setSelectedList(e.target.value)}>
+                  {lists.map(list => (
+                      <option value={list.title}>
+                          {list.title}
+                      </option>
+                  ))}
+                </select>
         </div>
     )
 }
