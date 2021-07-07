@@ -11,7 +11,10 @@ const ListsWrapper = ({ loggedUser, setLoggedUser }) => {
         setLoggedUser('')
     }
 
-    const lists = [{title: 'ShoppingList'}, {title: 'Todos'}, {title: 'reminders'}]
+    const lists = [
+      {title: 'ShoppingList',items: ['banana', 'butter', 'bread']},
+      {title: 'Todos',items: ['pay check', 'do laundry']},
+      {title: 'reminders', items:['item1', 'item2', 'item3']}]
 
     return (
         <div id='ListWrapperContainer'>

@@ -162,7 +162,7 @@ body {
 #ListItem {
 	position: relative;
 	width: 80%;
-	height: 80%;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -175,6 +175,8 @@ body {
 #ListItemHeader {
 	flex-basis: 10%;
 	width: 100%;
+	display: flex;
+	justify-content: center;
 	background-color: rgb(120, 139, 82);
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -182,6 +184,10 @@ body {
 
 #ListItemBody {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	width: 100%;
 	background-color: rgb(226, 226, 226);
 	flex-basis: 90%;
