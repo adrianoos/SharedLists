@@ -208,3 +208,36 @@ body {
 	background-color: rgb(131, 131, 131);
 	border: 1px solid black;
 }
+
+#NewList {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 80%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: rgb(252, 252, 252);
+	border: 1px black solid;
+	border-radius: 5px;
+}
+
+#NewListTitleInput {
+	margin: 10px;
+}
+
+#filledTitle {
+	width: 150px;
+	height: 120px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#pencil:hover {
+	cursor: pointer;
+}

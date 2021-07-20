@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { GrAddCircle } from 'react-icons/gr';
+import NewList from './NewList';
 
 const ListsManager = ({lists, setSelectedList}) => {
-  // zmień zawartość setSelectedList
-  // aktualnie ustawiany jest jedynie tytułem wybranej listy
-  // trzeba ustawić tam cały obiekt wybranej listy
 
-   // dostaje wszystkie listy z nich trzeba wyciągnąć pojedyńczą listę
+ const [ addList, setAddList ] = useState(false);
+
+ const addNewList = () => {
+     setAddList(!addList)
+     setSelectedList('')
+ }
 
     return (
         <div id='ListsManager'>
+            <GrAddCircle onClick={() => (addNewList())}/>
                 <select onChange={(e) => setSelectedList(lists.filter(item => (item.title === e.target.value)))}>
                   {lists.map(list => (
                       <option value={list.title} key={list.title}>
@@ -16,6 +21,8 @@ const ListsManager = ({lists, setSelectedList}) => {
                       </option>
                   ))}
                 </select>
+                { addList ? <NewList
+                /> : ''}
         </div>
     )
 }
