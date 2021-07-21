@@ -8,8 +8,7 @@ const NewList = ({setAddList}) => {
     const [ titleInput, SetTitleInput ] = useState('')
     const [ title, SetTitle ] = useState('')
     const [ itemValue, SetItemValue ] = useState('')
-    const [ listItems, SetListItems ] = useState('')
-
+    const [ listItems, SetListItems ] = useState([])
 
  const updateTitleInput = (e) => {
     SetTitleInput(e.target.value)
@@ -22,7 +21,8 @@ const updateTitle = (e) => {
 
 const updateListItem = (e) => {
     e.preventDefault()
-    SetListItems(itemValue)
+    SetListItems([...listItems, itemValue] )
+    SetItemValue('')
 }
 
 const updateListItemValue = (e) => {
@@ -52,11 +52,11 @@ const cancelNewList = () => {
              </form>
             }
             <form id='AddListItemsForm' onSubmit={updateListItem}>
-            <input placeholder='Add Item' onChange={updateListItemValue}></input>
-            <GrAddCircle />
+            <input placeholder='Add Item' onChange={updateListItemValue} value={itemValue}></input>
             </form>
             <ul id='ListItemsDisplay'>
-                <li>{listItems}</li>
+                {listItems.map( item =>
+                <li key={item}>{item}</li>)}
             </ul>
         </div>
     )
