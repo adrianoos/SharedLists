@@ -21,8 +21,7 @@ const ListsManager = ({lists, setSelectedList}) => {
                       </option>
                   ))}
                 </select>
-                { addList ? <NewList
-                /> : ''}
+                { addList ? <NewList setAddList={setAddList}/> : ''}
         </div>
     )
 }

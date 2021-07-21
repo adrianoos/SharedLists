@@ -226,7 +226,12 @@ body {
 }
 
 #NewListTitleInput {
-	margin: 10px;
+	position: relative;
+	height: 30px;
+	width: 150px;
+	top: 35px;
+	border: 2px black solid;
+	border-radius: 5px;
 }
 
 #filledTitle {
@@ -240,4 +245,38 @@ body {
 
 #pencil:hover {
 	cursor: pointer;
+}
+
+#NewListCancel {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+#NewListCancel:hover {
+	cursor: pointer;
+}
+
+#NewListSave {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+
+#NewListSave:hover {
+	cursor: pointer;
+	color: brown;
+}
+
+#AddListItemsForm {
+	position: absolute;
+	top: 100px;
+	width: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#ListItemsDisplay {
+	position: absolute;
+	top: 150px;
 }

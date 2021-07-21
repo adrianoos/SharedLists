@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import { BsPencil } from 'react-icons/bs';
+import { GiCancel } from 'react-icons/gi';
+import { GrAddCircle } from 'react-icons/gr';
 
-const NewList = () => {
+const NewList = ({setAddList}) => {
 
     const [ titleInput, SetTitleInput ] = useState('')
     const [ title, SetTitle ] = useState('')
+    const [ itemValue, SetItemValue ] = useState('')
+    const [ listItems, SetListItems ] = useState('')
 
 
  const updateTitleInput = (e) => {
@@ -16,12 +20,27 @@ const updateTitle = (e) => {
     SetTitle(titleInput)
 }
 
+const updateListItem = (e) => {
+    e.preventDefault()
+    SetListItems(itemValue)
+}
+
+const updateListItemValue = (e) => {
+   SetItemValue(e.target.value)
+}
+
 const pencilClick = () => {
     SetTitle('')
 }
 
+const cancelNewList = () => {
+    setAddList('')
+}
+
     return (
         <div id='NewList'>
+          <GiCancel id='NewListCancel' onClick={cancelNewList}/>
+          <p id='NewListSave'>Save List</p>
           { title ?
           <div id='filledTitle'>
             <h1>{title}</h1>
@@ -29,11 +48,18 @@ const pencilClick = () => {
           </div>
           :
              <form onSubmit={updateTitle}>
-               <input id='NewListTitleInput' placeholder='Title' onChange={updateTitleInput}></input>
+               <input id='NewListTitleInput' placeholder='List title' onChange={updateTitleInput}></input>
              </form>
             }
+            <form id='AddListItemsForm' onSubmit={updateListItem}>
+            <input placeholder='Add Item' onChange={updateListItemValue}></input>
+            <GrAddCircle />
+            </form>
+            <ul id='ListItemsDisplay'>
+                <li>{listItems}</li>
+            </ul>
         </div>
     )
 }
 
-export default NewList
+export default NewList;
