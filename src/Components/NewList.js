@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { BsPencil } from 'react-icons/bs';
-import { GiCancel } from 'react-icons/gi';
+import { GiCancel, GiPencil } from 'react-icons/gi';
 import { GrAddCircle } from 'react-icons/gr';
 
 const NewList = ({setAddList}) => {
@@ -37,6 +37,10 @@ const cancelNewList = () => {
     setAddList('')
 }
 
+const deleteItem = (item) => {
+     SetListItems(listItems.filter( el => el !== item))
+}
+
     return (
         <div id='NewList'>
           <GiCancel id='NewListCancel' onClick={cancelNewList}/>
@@ -56,7 +60,13 @@ const cancelNewList = () => {
             </form>
             <ul id='ListItemsDisplay'>
                 {listItems.map( item =>
-                <li key={item}>{item}</li>)}
+                <div id='newListItem'>
+                    <li key={item}>{item}</li>
+                    <GiPencil />
+                    <GiCancel onClick={() => deleteItem(item)}/>
+                </div>
+
+                )}
             </ul>
         </div>
     )

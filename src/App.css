@@ -280,3 +280,7 @@ body {
 	position: absolute;
 	top: 150px;
 }
+
+#newListItem {
+	display: flex;
+}
